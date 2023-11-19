@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tibia Adventure</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Uncial Antiqua', sans-serif;
+            background: url('https://image.civitai.com/xG1nkqKTMzGDvpLrqFT7WA/f7e88010-15cd-4d08-afb0-8cd1f3a7f3d3/width=1024/00497-1079197836.jpeg') center/cover no-repeat fixed;
+            background-size: cover;
+            animation: fadeIn 1s ease-out;
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #top-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffa500;
+            padding: 10px;
+            text-align: right;
+            padding-right: 20px;
+        }
+
+        #top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 5px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            border: 2px solid #fff;
+            padding: 10px;
+            display: inline-block;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        #left-section, #right-section {
+            width: 50%;
+            padding: 20px;
+            text-align: left;
+        }
+
+        #left-section {
+            float: left;
+        }
+
+        #right-section {
+            float: right;
+        }
+
+        #right-section ol {
+            list-style-type: none;
+            padding: 0;
+            display: none;
+        }
+
+        #right-section ol li {
+            margin-bottom: 10px;
+        }
+
+        #right-section ol a {
+            color: #800f00;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            width: 200px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-content {
+            display: none;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            display: block;
+            color: #800f00;
+            text-decoration: none;
+            margin-top: 5px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #fff;
+            color: #800f00;
+        }
+
+        footer {
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .centered-text {
+            background-color: #fff;
+            border: 2px solid #000;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top-bar">
+        <a href="#">Iniciar sesión</a>
+        <a href="#">Registrarse</a>
+    </div>
+
+    <header>
+        <h1>BIENVENIDO AVENTUREROS</h1>
+    </header>
+
+    <section>
+        <h2>Aventureros unidos por el conocimiento</h2> 
+        <p>Exploraremos nuevos caminos de conocimiento y riquezas.</p>
+    </section>
+
+    <div id="left-section">
+        <div class="dropdown">
+            <div class="dropdown-content" id="videos-dropdown">
+                <a href="https://www.youtube.com/watch?v=VIDEO_ID">Título del Video 1</a>
+                <a href="https://www.youtube.com/watch?v=VIDEO_ID">Título del Video 2</a>
+            </div>
+            <span onclick="toggleDropdown('videos-dropdown')">Videos del profesor ▼</span>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-content" id="presentations-dropdown">
+                <a href="enlace_a_tu_presentacion1.pdf">Presentación 1</a>
+                <a href="enlace_a_tu_presentacion2.pdf">Presentación 2</a>
+            </div>
+            <span onclick="toggleDropdown('presentations-dropdown')">Presentaciones ▼</span>
+        </div>
+
+        <div class="dropdown">
+            <div class="dropdown-content" id="thanks-dropdown">
+                <p class="centered-text">Feliz de ser parte del primer curso que enseñas. Gracias por tu dedicación y conocimiento.</p>
+            </div>
+            <span onclick="toggleDropdown('thanks-dropdown')">Agradecimientos ▼</span>
+        </div>
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/i19GO8SQi7M?si=gKehv30vhaHlVVXU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <footer>
+        <p>&copy; 2023 AVENTUREROS DE BA MULTIPLICA 2.0.</p>
+    </footer>
+    <script>
+        function toggleVideo() {
+            var videoIframe = document.getElementById('videos-iframe');
+            videoIframe.style.display = (videoIframe.style.display === 'none') ? 'block' : 'none';
+        }
+    </script>
+</html>
